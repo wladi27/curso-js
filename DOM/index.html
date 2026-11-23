@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica DOM</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Luces animadas de fondo -->
+  <div class="fondo-luces">
+    <div class="luz luz-1"></div>
+    <div class="luz luz-2"></div>
+    <div class="luz luz-3"></div>
+  </div>
+
+  <!-- Tarjeta principal -->
+  <div class="contenedor">
+    <h1 id="titulo">LISTA DE TAREAS DEL CURSO</h1>
+    
+    <div class="grupo-formulario">
+      <input type="text" id="input-tarea" placeholder="Escribir una tarea...">
+      <button id="btn-agregar">Agregar</button>
+    </div>
+
+    <ul id="lista-tareas"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

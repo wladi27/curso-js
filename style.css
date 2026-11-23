@@ -1,0 +1,29 @@
+
+h1 {
+    color: #212121;
+    font-size: 32px;
+    text-align: center;
+}
+
+p {
+    color: rgb(251, 91, 5);
+    font-weight: 300;
+}
+
+.parrafos-portada{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(255, 166, 0);
+}
+
+#parrafo-portada-post{
+    color: #ff2525;
+}
+
+.contenedor{
+    background-color: red;
+    padding: 20px;
+    color: white; 
+    margin-top: 50px;
+}

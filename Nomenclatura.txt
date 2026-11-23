@@ -1,0 +1,38 @@
+- camelCase (Variables y funciones)
+Ejemplo : 
+const nombreCliente = "Juan";
+
+- PascalCase (Clases)
+Ejemplo: Gestortareas {}
+
+- UPPER_SNAKE_CASE (CONSTANTE GLOBALES E INMUTABLES)
+Ejemplo: MAX_INTENTOS = 3;
+         API_URL = "https://api.doominio.com/v1";
+
+- Campos privados en clases (#)
+Ejemplo: #saldoCuenta = 0;
+
+------------------------------------------------------------------
+
+Asincronía y Modelo de Concurrencia
+JavaScript se ejecuta en un solo hilo (single-threaded) basado en un bucle de eventos
+(Event Loop). Las operaciones de entrada y salida de alta latencia (peticiones de red,
+lecturas del sistema de archivos, temporizadores) se gestionan de forma asíncrona
+mediante promesas y la sintaxis async/await.
+
+● Call Stack (Pila de Llamadas): Estructura LIFO (Last In, First Out) donde se
+apilan las funciones en ejecución síncrona.
+
+● Web APIs / Node APIs: Módulos proporcionados por el entorno donde se
+delegan operaciones asíncronas como peticiones HTTP (fetch), temporizadores
+(setTimeout) o escuchadores del DOM.
+
+● Microtask Queue (Cola de Microtareas): Cola de alta prioridad para callbacks
+de promesas (Promise.then, async/await) y queueMicrotask. Se vacía por
+completo inmediatamente después de apilar la última tarea síncrona del Call
+Stack y antes de procesar macrotareas.
+
+● Callback / Macrotask Queue (Cola de Macrotareas): Cola de menor prioridad
+que alberga callbacks de temporizadores, I/O y eventos del DOM. Se procesan
+de una en una por cada ciclo completo del Event Loop tras haber vaciado las
+microtareas.

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla de Usuarios</title>
+  <style>
+    table { width: 100%; border-collapse: collapse; font-family: sans-serif; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+    th { background-color: #222; color: white; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+  </style>
+</head>
+<body>
+
+  <h2>Lista de Usuarios</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Ciudad</th>
+      </tr>
+    </thead>
+    <!-- Aquí inyectaremos las filas dinámicamente -->
+    <tbody id="tabla-usuarios"></tbody>
+  </table>
+
+  <script>
+    async function cargarTabla() {
+      try {
+        const respuesta = await fetch("https://jsonplaceholder.typicode.com/users");
+        const usuarios = await respuesta.json();
+
+        const tbody = document.getElementById("tabla-usuarios");
+
+        // Transformamos cada usuario en una fila HTML <tr>
+        const filasHTML = usuarios.map((user) => `
+          <tr>
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>${user.address.city}</td>
+          </tr>
+        `).join(""); // .join("") une el array en un solo texto sin comas
+
+        tbody.innerHTML = filasHTML;
+
+      } catch (error) {
+        console.error("Error al cargar la tabla:", error);
+      }
+    }
+
+    cargarTabla();
+  </script>
+
+</body>
+</html>

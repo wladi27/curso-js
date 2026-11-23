@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selector de paletas de colores</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- ENCABEZADO -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">UI<span>Themes</span></div>
+
+      <!-- Botones generados dinámicamente desde JS -->
+      <div class="preset-buttons" id="presetContainer"></div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <!-- Vista previa de componentes -->
+    <section class="preview-section">
+      <h1>Sistema de Temas Dinámicos con CSS3 y JS</h1>
+      <p>
+        Selecciona una paleta predefinida en la barra superior o personaliza cada token de color en tiempo real. Tus preferencias se guardan automáticamente.
+      </p>
+
+      <div class="cards-grid">
+        <div class="card">
+          <h3>Variables Nativas</h3>
+          <p>Todo el diseño responde instantáneamente al actualizar las variables en <code>:root</code>.</p>
+        </div>
+        <div class="card">
+          <h3>Persistencia Local</h3>
+          <p>La paleta elegida se almacena en <code>localStorage</code> para mantenerse al recargar.</p>
+        </div>
+      </div>
+
+      <button class="btn-primary" id="copyCssBtn">Copiar variables CSS</button>
+    </section>
+
+    <!-- Panel de configuración manual -->
+    <aside class="customizer-panel">
+      <h2>Configurar Paleta</h2>
+      <p>Ajusta los colores individuales:</p>
+
+      <div class="color-control">
+        <label for="bgInput">Fondo principal</label>
+        <div class="color-input-group">
+          <span class="hex-code" id="bgHex">#0B0B0D</span>
+          <input type="color" id="bgInput" data-var="--bg-color" value="#0b0b0d" />
+        </div>
+      </div>
+
+      <div class="color-control">
+        <label for="surfaceInput">Tarjetas / Superficie</label>
+        <div class="color-input-group">
+          <span class="hex-code" id="surfaceHex">#16161A</span>
+          <input type="color" id="surfaceInput" data-var="--surface-color" value="#16161a" />
+        </div>
+      </div>
+
+      <div class="color-control">
+        <label for="textInput">Texto principal</label>
+        <div class="color-input-group">
+          <span class="hex-code" id="textHex">#F4F4F6</span>
+          <input type="color" id="textInput" data-var="--text-color" value="#f4f4f6" />
+        </div>
+      </div>
+
+      <div class="color-control">
+        <label for="accentInput">Color de acento</label>
+        <div class="color-input-group">
+          <span class="hex-code" id="accentHex">#FF6B00</span>
+          <input type="color" id="accentInput" data-var="--accent-color" value="#ff6b00" />
+        </div>
+      </div>
+
+      <div class="panel-actions">
+        <button class="btn-secondary" id="resetBtn">Restaurar defecto</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="container">
+      Arquitectura basada en CSS Custom Properties + Vanilla JavaScript
+    </div>
+  </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
